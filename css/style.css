@@ -140,6 +140,7 @@ img {
 .screenshots {
   padding: 48px 0;
   text-align: center;
+  background: #F8F9FA;
 }
 
 .screenshots h2 {
@@ -150,15 +151,22 @@ img {
 
 .screenshots-grid {
   display: flex;
-  gap: 24px;
+  gap: 32px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.screenshots-grid img {
-  width: 240px;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+.phone-frame {
+  width: 220px;
+  background: #1A1A1A;
+  border-radius: 28px;
+  padding: 12px 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+.phone-frame img {
+  width: 100%;
+  border-radius: 20px;
 }
 
 /* ===== Footer ===== */
@@ -275,8 +283,8 @@ img {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .screenshots-grid img {
-    width: 280px;
+  .phone-frame {
+    width: 260px;
   }
 
   .footer-content {
