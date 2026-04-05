@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap');
+
+  body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #f0f0f0;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .canvas {
+    width: 1200px;
+    height: 630px;
+    background: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .left {
+    flex: 0 0 45%;
+    background: linear-gradient(135deg, #87CEEB 0%, #4CAF50 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .app-icon {
+    width: 180px;
+    height: 180px;
+    border-radius: 40px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    overflow: hidden;
+  }
+
+  .app-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .right {
+    flex: 0 0 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 48px;
+  }
+
+  .app-name {
+    font-size: 44px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 12px;
+  }
+
+  .catchcopy {
+    font-size: 22px;
+    font-weight: 400;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .badge {
+    background: #0A84FF;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 12px 32px;
+    border-radius: 32px;
+  }
+
+  .logo {
+    position: absolute;
+    bottom: 20px;
+    right: 32px;
+    font-size: 16px;
+    color: #999999;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="left">
+    <div class="app-icon">
+      <img src="images/icon.png" alt="app icon">
+    </div>
+  </div>
+  <div class="right">
+    <div class="app-name">今日どこ行く？</div>
+    <div class="catchcopy">
+      UV・雨・風・気温を100点満点で比較<br>
+      名古屋近郊70施設の気象安全スコア
+    </div>
+    <div class="badge">2026年5月リリース予定</div>
+  </div>
+  <div class="logo">tosnet studio</div>
+</div>
+</body>
+</html>
