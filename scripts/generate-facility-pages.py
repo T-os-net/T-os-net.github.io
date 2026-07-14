@@ -105,12 +105,16 @@ def validate_required_keys(facilities: list[dict]) -> str | None:
 
 
 def compute_counts(facilities: list[dict]) -> tuple[int, int, int]:
-    """(公園数, 無料公園数, プール数)を算出。プール判定 = category == "pool"、active のみ。"""
+    """(非プール施設数, 無料施設数, プール数)を算出。プール判定 = category == "pool"、active のみ。
+
+    ⚠️ 非プール 92 は公園 50 + 水族館/動物園/博物館/商業等 42 = 全て公園ではない(D-37)。
+    外部コピーの傘表現は「公園・おでかけスポット」。無料も件数(55)= 無料施設で訴求(無料の公園は 43)。
+    """
     active = [f for f in facilities if f["isActive"]]
     pools = [f for f in active if f["category"] == "pool"]
-    parks = [f for f in active if f["category"] != "pool"]
-    free_parks = [f for f in parks if f["admissionFee"] == "free"]
-    return len(parks), len(free_parks), len(pools)
+    non_pool = [f for f in active if f["category"] != "pool"]
+    free_facilities = [f for f in non_pool if f["admissionFee"] == "free"]
+    return len(non_pool), len(free_facilities), len(pools)
 
 
 def render_page(f: dict, parks: int, free: int, pools: int, generated_note: str) -> str:
