@@ -73,7 +73,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     </div>
     <div class="card app">
       <h2>今日の遊びやすさは、アプリで</h2>
-      <p>「今日どこ行く？」は、名古屋近郊の公園{parks}施設(うち{free}施設は無料)と
+      <p>「今日どこ行く？」は、名古屋近郊の公園・おでかけスポット{parks}施設(うち{free}施設は無料)と
          レジャープール{pools}施設を、雨・UV・風・気温の独自スコアで比較できる無料アプリです。
          この施設の「今日の遊びやすさ」も 10 秒でわかります。</p>
       <a class="store" href="{app_store_url}">App Store で入手(無料)</a>
