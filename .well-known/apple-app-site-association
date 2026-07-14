@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["B3BQ2BA2A8.com.tosnet-studio.ParkCompareApp"],
+        "components": [
+          { "/": "/f/*", "comment": "施設別受け皿ページ → アプリの施設詳細へ" }
+        ]
+      }
+    ]
+  }
+}
