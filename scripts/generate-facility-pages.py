@@ -69,7 +69,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   <div class="wrap">
     <div class="card">
       <h1>{name}</h1>
-      <p class="meta">{type_label} ｜ {address}</p>{inactive_notice}
+      <p class="meta">{meta_line}</p>{inactive_notice}
     </div>
     <div class="card app">
       <h2>今日の遊びやすさは、アプリで</h2>
@@ -119,15 +119,19 @@ def compute_counts(facilities: list[dict]) -> tuple[int, int, int]:
 
 def render_page(f: dict, parks: int, free: int, pools: int, generated_note: str) -> str:
     type_label = FACILITY_TYPE_LABEL.get(f["facilityType"], "施設")
+    # address 未整備の施設が多数あるため空なら括弧・区切りごと省略(2026-07-15 fallback。
+    # 一括リサーチで埋まり次第、再生成すれば自動で表示される)
+    address = (f.get("address") or "").strip()
     # description は生の値で組み立ててから 1 回だけ escape(二重エスケープ防止)
+    address_part = f"({address})" if address else ""
     description_raw = (
-        f"{f['name']}({f['address']})の今日の遊びやすさを、雨・UV・風・気温の"
+        f"{f['name']}{address_part}の今日の遊びやすさを、雨・UV・風・気温の"
         "独自スコアでチェック。名古屋近郊の子連れおでかけ比較アプリ「今日どこ行く？」"
     )
+    meta_line = f"{type_label} ｜ {address}" if address else type_label
     return PAGE_TEMPLATE.format(
         name=html.escape(f["name"]),
-        address=html.escape(f["address"]),
-        type_label=type_label,
+        meta_line=html.escape(meta_line),
         description=html.escape(description_raw),
         ogp_image=OGP_IMAGE,
         page_url=f"{SITE_ORIGIN}/f/{f['id']}/",
