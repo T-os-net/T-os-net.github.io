@@ -104,6 +104,10 @@ img {
   opacity: 0.9;
 }
 
+.keep-word {
+  white-space: nowrap;
+}
+
 /* ===== Features ===== */
 .features {
   background: #F8F9FA;
