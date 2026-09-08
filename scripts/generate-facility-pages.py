@@ -21,7 +21,8 @@ import json
 import pathlib
 import sys
 
-APP_STORE_URL = "https://apps.apple.com/jp/app/id6762373565"
+APP_STORE_ID = "6762373565"
+APP_STORE_URL = f"https://apps.apple.com/jp/app/id{APP_STORE_ID}"
 SITE_ORIGIN = "https://tosnet-studio.com"
 OGP_IMAGE = f"{SITE_ORIGIN}/images/ogp.png"
 
@@ -38,6 +39,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-itunes-app" content="app-id={app_store_id}, app-argument={page_url}">
   <title>{name} | 今日どこ行く？</title>
   <meta name="description" content="{description}">
   <meta property="og:title" content="{name} | 今日どこ行く？">
@@ -141,6 +143,7 @@ def render_page(f: dict, parks: int, free: int, pools: int, generated_note: str)
         free=free,
         pools=pools,
         app_store_url=APP_STORE_URL,
+        app_store_id=APP_STORE_ID,
         site_origin=SITE_ORIGIN,
     )
 
