@@ -108,6 +108,45 @@ img {
   white-space: nowrap;
 }
 
+/* ===== 新着情報 ===== */
+.news {
+  padding: 32px 0 48px;
+}
+
+.news h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.news-list {
+  list-style: none;
+}
+
+.news-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 24px;
+  padding: 16px 0;
+  border-top: 1px solid #E0E0E0;
+}
+
+.news-list time {
+  color: #666666;
+  font-size: 14px;
+}
+
+.news-list a {
+  color: #0066CC;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.news-list a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
 /* ===== Features ===== */
 .features {
   background: #F8F9FA;
