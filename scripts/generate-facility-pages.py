@@ -22,7 +22,7 @@ import pathlib
 import sys
 
 APP_STORE_ID = "6762373565"
-APP_STORE_URL = f"https://apps.apple.com/jp/app/id{APP_STORE_ID}"
+APP_STORE_URL = f"https://apps.apple.com/jp/app/id{APP_STORE_ID}?pt=128792125&ct=score26_website&mt=8"
 SITE_ORIGIN = "https://tosnet-studio.com"
 OGP_IMAGE = f"{SITE_ORIGIN}/images/ogp.png"
 
@@ -142,7 +142,7 @@ def render_page(f: dict, parks: int, free: int, pools: int, generated_note: str)
         parks=parks,
         free=free,
         pools=pools,
-        app_store_url=APP_STORE_URL,
+        app_store_url=html.escape(APP_STORE_URL, quote=True),
         app_store_id=APP_STORE_ID,
         site_origin=SITE_ORIGIN,
     )
