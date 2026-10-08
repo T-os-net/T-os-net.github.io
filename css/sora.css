@@ -440,3 +440,9 @@ section[id] { scroll-margin-top: 6rem; }
 
 .viewer-image[hidden], .viewer-status[hidden] { display: none; }
 .viewer-status { padding: 16px; font-size: 1rem; line-height: 1.7; }
+
+/* 新着情報を日付ごとにまとめる。 */
+.news-items { display: grid; gap: 12px; flex: 1 1 480px; min-width: 0; }
+.news-item { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.news-item + .news-item { border-top: 1px solid var(--ink-2); padding-top: 12px; }
+.news-item .news-note { flex-basis: 100%; }
