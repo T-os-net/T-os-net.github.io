@@ -2,93 +2,310 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>今日どこ行く？ — 名古屋近郊の公園・おでかけ比較アプリ(無料)</title>
-  <meta name="description" content="名古屋近郊の公園・おでかけスポット・レジャープールを、天気や子どもの年齢・施設の設備を合わせた100点満点のスコアで比較。授乳室や駐車場などの情報も、施設ごとに行く前に確認できる、子連れおでかけアプリ。">
-  <meta property="og:title" content="今日どこ行く？ — 名古屋近郊の公園・おでかけ比較アプリ(無料)">
-  <meta property="og:description" content="名古屋近郊の公園・おでかけスポット・レジャープールを、天気や子どもの年齢・施設の設備を合わせた100点満点のスコアで比較。授乳室や駐車場などの情報も、施設ごとに行く前に確認できる、子連れおでかけアプリ。">
-  <meta property="og:image" content="https://tosnet-studio.com/images/ogp.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>今日どこ行く？ — 名古屋近郊の公園・おでかけ比較アプリ</title>
+  <meta name="description" content="名古屋近郊の子連れおでかけアプリ。公園・おでかけスポット・レジャープールを、今日の天気と子どもの年齢・施設の設備から、理由つきで見比べられます。授乳室や駐車場などの情報も、行く前に確認できます。">
+  <meta name="theme-color" content="#FFF8EC">
+  <meta property="og:title" content="今日どこ行く？ — 名古屋近郊の公園・おでかけ比較アプリ">
+  <meta property="og:description" content="名古屋近郊の子連れおでかけアプリ。公園・おでかけスポット・レジャープールを、今日の天気と子どもの年齢・施設の設備から、理由つきで見比べられます。授乳室や駐車場などの情報も、行く前に確認できます。">
+  <link rel="canonical" href="https://tosnet-studio.com/">
   <meta property="og:url" content="https://tosnet-studio.com/">
+  <meta property="og:image" content="https://tosnet-studio.com/assets/social/homepage-20261009.png">
+  <meta property="og:image:alt" content="今日どこ行く？ 名古屋近郊の子連れおでかけアプリ">
+  <meta name="twitter:image" content="https://tosnet-studio.com/assets/social/homepage-20261009.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css?v=20260929-news">
+  <meta name="twitter:title" content="今日どこ行く？ — 名古屋近郊の公園・おでかけ比較アプリ">
+  <link rel="icon" type="image/png" href="/assets/icon.png?v=134">
+  <link rel="apple-touch-icon" href="/assets/icon.png?v=134">
+  <meta name="apple-itunes-app" content="app-id=6762373565">
+  <link rel="stylesheet" href="/css/sora.css?v=20261009-release">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__soraReady)document.documentElement.classList.remove('js');},3000);</script>
 </head>
-<body>
-  <header class="site-header">
-    <div class="container">
-      <a href="/" class="site-logo">
-        <img src="/images/icon.png" alt="今日どこ行く？">
-        <span>今日どこ行く？</span>
-      </a>
-      <nav class="site-nav">
-        <a href="/privacy.html">プライバシーポリシー</a>
-        <a href="/terms.html">利用規約</a>
-        <a href="/legal.html">特定商取引法</a>
-      </nav>
-    </div>
+<body data-weather="sun">
+  <a class="skip" href="#main">本文へ移動</a>
+
+  <!-- 手描きの揺らぎ用フィルタ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="3.200"/></filter>
+  </svg>
+
+  <header class="top">
+    <a href="/" class="brand" aria-label="今日どこ行く？ トップへ">
+      <img src="/assets/icon.png?v=134" width="34" height="34" alt="">
+      <span>今日どこ行く？</span>
+    </a>
+    <nav class="top-nav" aria-label="ページ内">
+      <a href="#pages">使ってみると</a>
+      <a href="#colors">4つの色</a>
+      <a href="#letter">つくった人</a>
+      <a href="#faq">質問</a>
+    </nav>
+    <a class="pill" href="https://apps.apple.com/jp/app/id6762373565?pt=128792125&amp;ct=score26_website&amp;mt=8" target="_blank" rel="noopener">App Store</a>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>今日の天気で、子連れのおでかけ先を選ぶ。</h1>
-      <p>天気・UV・風・気温に、子どもの年齢や施設の設備も合わせた100点満点のスコアで、<br>名古屋近郊の公園・屋内施設・<span class="keep-word">レジャープール</span>を比べられます。授乳室や駐車場などの情報も、施設ごとに行く前に確認できます。</p>
-      <a href="https://apps.apple.com/jp/app/id6762373565?pt=128792125&amp;ct=score26_website&amp;mt=8" class="cta" target="_blank" rel="noopener">📱 App Store でダウンロード</a>
-    </div>
-  </section>
+  <main id="main">
+    <!-- ════════ HERO:手描きの街(飾り)の中に、実際のアプリ画面 ════════ -->
+    <section class="hero" aria-labelledby="hero-h">
+      <div class="hero-text">
+        <p class="hello">名古屋近郊の、子連れおでかけアプリ</p>
+        <h1 id="hero-h">
+          <span class="h1-q">今日、</span><span class="h1-q">どこ行く<span class="q">？</span></span>
+        </h1>
+        <p class="lead">いつもの公園も、雨の日の屋内も。今日の天気や子どもの年齢・設備に合わせた<b>目安と理由</b>を見比べて、行き先を選べます。</p>
+      </div>
 
-  <section class="news" aria-labelledby="news-heading">
-    <div class="container">
-      <h2 id="news-heading">新着情報</h2>
-      <ul class="news-list">
-        <li>
-          <time datetime="2026-09-29">2026年9月29日</time>
-          <a href="/premium-notice.html">Premium導入と規約改定のお知らせ</a>
-        </li>
+      <div class="hero-cta">
+        <div class="cta-pair">
+          <a class="btn" href="https://apps.apple.com/jp/app/id6762373565?pt=128792125&amp;ct=score26_website&amp;mt=8" target="_blank" rel="noopener">App Store で見る</a>
+          <a class="more" href="#pages">本物の画面を見る <span aria-hidden="true">↓</span></a>
+        </div>
+        <button type="button" class="calm-btn calm-hero">動きを止める</button>
+        <p>iPhone対応(iOS 18以降)・現在は無料でお使いいただけます</p>
+      </div>
+
+      <div class="town-wrap">
+        <figure class="town-scene">
+          <svg class="town" viewBox="0 0 800 470" aria-hidden="true" focusable="false">
+          <rect class="sky" width="800" height="470"/>
+          <g class="sun-g"><circle class="sun-halo" cx="655" cy="92" r="70"/><circle class="sun" cx="655" cy="92" r="40"/></g>
+          <g class="clouds">
+            <path class="cloud cl1" d="M120 120a26 26 0 0 1 4-52 36 36 0 0 1 66-6 28 28 0 0 1 44 20 18 18 0 0 1-4 38z"/>
+            <path class="cloud cl2" d="M420 92a20 20 0 0 1 3-40 28 28 0 0 1 52-4 22 22 0 0 1 34 16 14 14 0 0 1-3 28z"/>
+            <path class="cloud cl3" d="M560 150a22 22 0 0 1 3-44 30 30 0 0 1 56-5 24 24 0 0 1 38 17 15 15 0 0 1-3 32z"/>
+          </g>
+          <!-- 地面 -->
+          <path class="hill h-back" d="M0 330q140-70 300-20t300-30 200 10V470H0z"/>
+          <path class="hill h-front" d="M0 380q180-40 380 0t420-20V470H0z"/>
+          <!-- 公園:木・すべり台・ブランコ -->
+          <g class="park">
+            <g filter="url(#rough)">
+              <rect x="70" y="260" width="12" height="80" rx="4" class="trunk"/><circle cx="76" cy="240" r="46" class="leaf"/><circle cx="52" cy="262" r="28" class="leaf"/><circle cx="102" cy="262" r="26" class="leaf"/>
+              <path d="M150 360V280h16v80M150 290h60l52 70" class="slide"/>
+              <path d="M286 360l22-90 22 90M286 360l44-90M308 270l22 0" class="swing"/>
+            </g>
+            <path d="M314 278v42M326 278v42M310 320h20" class="seat"/>
+          </g>
+          <!-- 屋内の遊び場 -->
+          <g class="indoor" filter="url(#rough)">
+            <path d="M420 370V270l70-48 70 48v100z" class="house"/>
+            <rect x="446" y="292" width="34" height="28" rx="4" class="win"/><rect x="500" y="292" width="34" height="28" rx="4" class="win"/><rect x="474" y="334" width="32" height="36" rx="4" class="door"/>
+          </g>
+          <!-- プール -->
+          <g class="pool">
+            <g filter="url(#rough)"><rect x="602" y="352" width="176" height="44" rx="20" class="water"/><path d="M752 352v-44h14M752 318h14M752 332h14" class="ladder"/></g>
+            <path d="M620 372q12-8 24 0t24 0 24 0 24 0 24 0 24 0" class="ripple"/>
+          </g>
+          <circle class="ball" cx="232" cy="398" r="11"/>
+        </svg>
+          <div class="town-phone">
+            <span class="tape" aria-hidden="true"></span>
+            <a class="shot-link" data-shot="0" href="/assets/shots/01-list-decide@2x.jpg" aria-label="一覧画面を拡大する"><img src="/assets/shots/01-list-decide.jpg" srcset="/assets/shots/01-list-decide.jpg 506w, /assets/shots/01-list-decide@2x.jpg 874w" sizes="(max-width: 860px) 46vw, 240px" width="506" height="1100" alt="実際のアプリの一覧画面。上に今日からの天気と時間帯ごとの降水確率、その下に施設がスコアと理由のアイコンつきで並ぶ" fetchpriority="high"></a>
+          </div>
+          <figcaption class="town-cap">実際のアプリの一覧画面です(2026年8月に撮影。表示中の天気やスコアは撮影日のもので、現在の予報ではありません)。周りの絵は飾りです。<a href="/assets/shots/01-list-decide@2x.jpg" data-shot="0">画面を拡大して見る</a></figcaption>
+        </figure>
+      </div>
+
+    </section>
+
+    <aside class="news" aria-labelledby="news-h">
+      <h2 id="news-h">新着情報</h2>
+      <time datetime="2026-09-29">2026.9.29</time>
+      <a href="https://tosnet-studio.com/premium-notice.html">Premium導入と規約改定のお知らせ</a><span class="news-note">主要な機能は引き続き無料です</span>
+    </aside>
+
+    <!-- ════════ ひとりごと ════════ -->
+    <section class="mumble" aria-label="休日の朝のひとりごと">
+      <ul class="bubbles">
+        <li class="bb reveal">雨、降るかなあ。</li>
+        <li class="bb reveal">暑すぎない？</li>
+        <li class="bb reveal">授乳室、あったっけ。</li>
+        <li class="bb reveal">駐車場、あるかな。</li>
+        <li class="bb reveal">いつもの公園、今日はどうかな。</li>
       </ul>
-    </div>
-  </section>
+      <p class="mumble-ans reveal">休日の朝のひとりごとに、<br class="sp">ひとつの画面でこたえたくて。</p>
+    </section>
 
-  <section class="features">
-    <div class="container">
-      <div class="features-grid">
-        <div class="feature">
-          <div class="feature-icon">💯</div>
-          <h3>独自スコアで 4 指標比較</h3>
-          <p>UV・雨・風・気温の 4 指標で総合判定。「あそびやすい」「注意」「短時間なら可」「見送り」の 4 段階でわかりやすく。</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">🏞️</div>
-          <h3>公園・おでかけスポット 96 施設(うち 57 無料)+ レジャープール 20 施設</h3>
-          <p>公園・屋内施設・動物園・水族館・レジャープールをカバー。雨や暑さなどで外遊びが難しい施設は、見送り候補に分けて表示します。</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">⚡</div>
-          <h3>行く前に、設備まで確認</h3>
-          <p>授乳室・おむつ替え・遊具・駐車場などの情報を、施設ごとに出かける前にチェック。お気に入り登録で、いつもの場所もすぐ開けます。</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- ════════ 空もよう帳(本物の画面を貼ったノート) ════════ -->
+    <section class="pages" id="pages" aria-labelledby="pages-h">
+      <header class="sec-head">
+        <p class="eyebrow">使ってみると</p>
+        <h2 id="pages-h">空もよう帳</h2>
+        <p>いろんな日の朝に、アプリがどう答えるか。<br class="sp">貼ってあるのは、ぜんぶ本物の画面です。気になるページから、どうぞ。</p>
+      </header>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <p>&copy; 2026 tosnet studio</p>
-        <div class="footer-links">
-          <a href="mailto:contact@tosnet-studio.com">お問い合わせ</a>
-          <a href="/privacy.html">プライバシーポリシー</a>
-          <a href="/terms.html">利用規約</a>
-          <a href="/legal.html">特定商取引法</a>
-          <a href="/analytics.html">アクセス解析について</a>
+      <nav class="bookmarks" id="bookmarks" aria-label="空もよう帳のしおり">
+        <a href="#compare"><span aria-hidden="true">01</span> 候補を比べる</a>
+        <a href="#movie"><span aria-hidden="true">02</span> 動きを見る</a>
+        <a href="#reasons"><span aria-hidden="true">03</span> 理由と持ち物</a>
+        <a href="#filter"><span aria-hidden="true">04</span> 条件で絞る</a>
+        <a href="#notify"><span aria-hidden="true">05</span> 予定の通知</a>
+      </nav>
+      <p class="archive-note">施設詳細は1.3.4（2026年10月撮影）、その他の画面は1.3.0のものです。動画は2026年7〜8月に収録しました。表示中の天気やスコアは撮影日のもので、現在の予報ではありません。画面をタップすると拡大できます。</p>
+
+      <article class="page p1 reveal" id="compare">
+        <div class="page-shot"><span class="tape"></span>
+          <a class="shot-link" data-shot="0" href="/assets/shots/01-list-decide@2x.jpg" aria-label="一覧画面を拡大する"><img src="/assets/shots/01-list-decide.jpg" srcset="/assets/shots/01-list-decide.jpg 506w, /assets/shots/01-list-decide@2x.jpg 874w" sizes="(max-width: 700px) 62vw, 280px" width="506" height="1100" alt="一覧画面。上に今日からの天気と時間帯ごとの降水確率、その下に施設がスコアつきで並ぶ" loading="lazy" decoding="async"></a>
         </div>
-        <div class="footer-sns">
-          <a href="https://instagram.com/tosnet_studio" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://x.com/tosnet_studio" target="_blank" rel="noopener">X</a>
-          <a href="https://note.com/tosnet_studio" target="_blank" rel="noopener">note</a>
+        <div class="page-memo">
+          <p class="stamp s-sun">くもりのち 晴れ間</p>
+          <h3>今日の天気から、<br>行き先の候補へ。</h3>
+          <p>現在地の天気を3日分と、時間帯ごとの降水確率。その下に、行き先がスコアつきで並びます。おでかけ距離はスライダーで調整できます。</p>
+          <p class="hand">→ 現在地からの距離で絞れます。お子さんの月齢に合わせて、授乳室・おむつ替えがある施設にはラベルが出ます(掲載のない施設もあるので、行く前に公式サイトもご確認ください)</p>
         </div>
+      </article>
+
+      <article class="page p2 reveal" id="movie">
+        <div class="page-shot is-video"><span class="tape"></span>
+          <video id="app-video" class="clip" muted playsinline controls preload="none" poster="/assets/video/demo-poster.jpg" aria-label="猛暑日のアプリ画面の動き。屋外の施設には暑さの注意、屋内の施設は100点で並ぶ">
+            <source src="/assets/video/demo.webm" type="video/webm">
+            <source src="/assets/video/demo.mp4" type="video/mp4">
+          </video>
+          <button type="button" class="vbtn" aria-controls="app-video">動画を再生</button>
+        </div>
+        <div class="page-memo">
+          <p class="stamp s-heat">猛暑の日</p>
+          <h3>暑すぎる日は、<br>屋内の候補も一緒に見られる。</h3>
+          <p>猛暑日に収録した、実際の画面の動きです。屋外の施設には「体感温度が危険な暑さ」と理由が出て、同じ一覧の下には、屋内の施設が100点で並びました。</p>
+          <p class="fine">※ 収録した日の画面です。音声はありません。再生ボタンを押すと動きが見られます。スコアは天候や条件によって日々変わります。</p>
+        </div>
+      </article>
+
+      <article class="page p3 reveal" id="reasons">
+        <div class="page-shot"><span class="tape"></span>
+          <a class="shot-link" data-shot="1" href="/assets/shots/03-detail-score-1.3.4.png" aria-label="理由と持ち物の画面を拡大する"><img src="/assets/shots/03-detail-score-1.3.4.png" width="1206" height="2622" alt="1.3.4の施設詳細画面。東山動植物園のスコア83と「あそびやすい」、UVの注意と帽子・日焼け止めの案内" loading="lazy" decoding="async"></a>
+        </div>
+        <div class="page-memo">
+          <p class="stamp s-cloud">UVが高めの日</p>
+          <h3>理由が分かると、<br>持ち物も考えやすい。</h3>
+          <p>帽子や日焼け止めは必要？ 雨に備えて傘を持つ？ 天気に合わせた注意点と持ち物のヒントを、出かける前に確認できます。風が強いときは、テントやレジャーシートへの注意も表示します。</p>
+        </div>
+      </article>
+
+      <article class="page p4 reveal" id="filter">
+        <div class="page-shot"><span class="tape"></span>
+          <a class="shot-link" data-shot="2" href="/assets/shots/04-filter@2x.jpg" aria-label="入場無料で絞り込んだ画面を拡大する"><img src="/assets/shots/04-filter.jpg" srcset="/assets/shots/04-filter.jpg 506w, /assets/shots/04-filter@2x.jpg 874w" sizes="(max-width: 700px) 62vw, 280px" width="506" height="1100" alt="「入場無料」で絞り込んだ一覧画面" loading="lazy" decoding="async"></a>
+        </div>
+        <div class="page-memo">
+          <p class="stamp s-free">お財布と相談の日</p>
+          <h3>うちの条件に合う場所を、<br>見つけやすい。</h3>
+          <p>雨の日は屋内、お財布が気になる日は入場無料、はじめての場所がいい日は未訪問。その日の事情に合わせて、候補を絞れます。</p>
+          <p class="fine">画面で分かること：屋内OK・入場無料・未訪問、授乳室や水遊びの有無で絞り込み</p>
+        </div>
+      </article>
+
+      <article class="page p5 reveal" id="notify">
+        <div class="page-shot"><span class="tape"></span>
+          <a class="shot-link" data-shot="3" href="/assets/shots/06-notify-priming@2x.jpg" aria-label="通知設定の画面を拡大する"><img src="/assets/shots/06-notify-priming.jpg" srcset="/assets/shots/06-notify-priming.jpg 506w, /assets/shots/06-notify-priming@2x.jpg 874w" sizes="(max-width: 700px) 62vw, 280px" width="506" height="1100" alt="おでかけの予定をお知らせする設定の画面" loading="lazy" decoding="async"></a>
+        </div>
+        <div class="page-memo">
+          <p class="stamp s-rain">予定の前の日</p>
+          <h3>楽しみにしていた日を、<br>思い出しやすい。</h3>
+          <p>訪問予定を登録すると、3日前・前日の夜と、当日の朝にお知らせします。予定日の天気予報も一緒に届くので、出発前の準備に役立ちます。<br><small>※ 通知の許可と設定が必要です。天気予報を取得できない場合は、予定のお知らせのみ届きます。</small></p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ════════ 4つの色 ════════ -->
+    <section class="colors" id="colors" aria-labelledby="colors-h">
+      <header class="sec-head">
+        <p class="eyebrow">スコアの見方</p>
+        <h2 id="colors-h">「行っても大丈夫かな」に、目安がある。</h2>
+        <p>点数をじっくり読まなくても、色と段階で「今日は行けそうか」の目安が分かります。100点満点のスコアを、4つの段階で表します。</p>
+      </header>
+      <ol class="crayons">
+        <li class="cr c-great reveal"><span class="cr-band">80〜100</span><b>あそびやすい</b><span>今日はのびのび遊べそう。</span></li>
+        <li class="cr c-caution reveal"><span class="cr-band">60〜79</span><b>注意しながら遊べる</b><span>帽子や水分など、少し備えて。</span></li>
+        <li class="cr c-short reveal"><span class="cr-band">40〜59</span><b>短時間なら可</b><span>さっと遊んで、早めに切り上げ。</span></li>
+        <li class="cr c-skip reveal"><span class="cr-band">0〜39</span><b>今日は見送り</b><span>今日は別の行き先も見てみよう、のサイン。屋内の施設も候補に。</span></li>
+      </ol>
+      <p class="fine center">スコアは、天候と、子どもの年齢・施設の条件を合わせた「目安」です。安全を保証するものではありません。</p>
+    </section>
+
+    <!-- ════════ 数 ════════ -->
+    <section class="count" aria-labelledby="count-h">
+      <h2 id="count-h" class="count-h">いつもの公園も、はじめての場所も。</h2>
+      <p class="count-lead">いつもの場所へ行く日も、別の候補を探す日も。理由や注意点を見比べて、今日の行き先を選べます。</p>
+      <div class="count-row">
+        <p class="cnt reveal"><b data-count="96">96</b><span>名古屋近郊の<br>公園・おでかけスポット</span></p>
+        <p class="cnt cnt-free reveal"><b data-count="57">57</b><span>うち、<br>入場無料の施設<br><small>(公園のほか屋内施設なども)</small></span></p>
+        <p class="cnt reveal"><b data-count="20">20</b><span>レジャープール<br><small>(別にカウント)</small></span></p>
       </div>
-    </div>
+      <p class="fine center">現在の収録数。公園のほか、屋内施設・動物園・水族館・博物館などを含みます。施設情報は変更される場合があります。</p>
+    </section>
+
+    <!-- ════════ 手紙(理念) ════════ -->
+    <section class="letter" id="letter" aria-labelledby="letter-h">
+      <div class="paper reveal">
+        <p class="eyebrow">つくった人から</p>
+        <h2 id="letter-h">すべては、<br>子どもと過ごす時間のために。</h2>
+        <p class="sub2">子どもが、健やかに過ごせるように。</p>
+        <div class="letter-body">
+          <p>はじめまして。tosnet studio です。子育て中の親として、自分の困りごとからアプリをつくっています。</p>
+          <p>はじまりは、会社の同期にもらった、25施設のおでかけリスト。子育ての先輩たちに教わった場所から、少しずつ増えていきました。</p>
+          <p>それでも、出かける前に毎回調べるのは大変です。名古屋近郊には良い公園がたくさんあるぶん、選ぶのも悩ましい。だから、実際に足を運んで確かめてきたことも詰め込んで、アプリにしました。</p>
+          <p>親が子どもと本当に一緒に過ごせる時間は、思っているより短いのかもしれません。「どこへ行こう」と悩む時間が少し減って、その分が家族で楽しく過ごす時間になったら、うれしいです。</p>
+        </div>
+        <p class="sign">tosnet studio</p>
+        <aside class="sticky reveal" aria-label="現地メモ">
+          <p class="sticky-h">現地メモ <small>(訪問時の記録・2026年8月)</small></p>
+          <p>大府市の有料の屋内遊び場「カラダうごかす森 Harappa（ハラッパ）」には「赤ちゃん優先エリア 0〜2さいまで」。授乳室は2部屋、扉の前におむつ替えシートが3台。赤ちゃん連れでも動きやすそう。<br><small>※ 訪問時の情報です。最新情報は公式サイトでご確認ください。</small></p>
+        </aside>
+        <p class="mission"><b>ミッション</b>子育ての毎日にある手間や不安を、親本人の視点でアプリに変え、家族が子どもと楽しく過ごす時間を増やしていく。</p>
+      </div>
+    </section>
+
+    <!-- ════════ FAQ ════════ -->
+    <section class="faq" id="faq" aria-labelledby="faq-h">
+      <header class="sec-head"><p class="eyebrow">質問</p><h2 id="faq-h">はじめる前に。</h2></header>
+      <div class="qa">
+        <details><summary>無料で使えますか？</summary><p>現在、アプリは無料でお使いいただけます。Premiumはまだ販売していません。今後、有料プランを追加する予定ですが、スコアや理由・注意点など、行き先選びの主要な機能は引き続き無料です。詳しくは<a href="https://tosnet-studio.com/premium-notice.html">お知らせ</a>をご覧ください。</p></details>
+        <details><summary>どのエリアの施設が見られますか？</summary><p>名古屋近郊が中心です。位置情報を使わずに、名古屋駅周辺を基準に探すこともできます。</p></details>
+        <details><summary>スコアが高ければ安全ですか？</summary><p>スコアは目安で、安全を保証するものではありません。屋外では天気をもとにした点数に、子どもの年齢や施設の条件を反映します。屋内では天候に左右されない基礎点に、子どもや施設の条件を反映します。屋外プールは暑さには強い一方、極端な暑さでは点が下がります。施設の最新情報は、各公式サイトでもご確認ください。</p></details>
+        <details><summary>天気のデータはどこから？</summary><p>Apple の天気(WeatherKit)を使っています。アプリ内にも出典を表示しています。</p></details>
+        <details><summary>対応している端末は？</summary><p>iPhone(iOS 18以降)です。</p></details>
+        <details><summary>個人情報の扱いは？</summary><p>詳しくは<a href="https://tosnet-studio.com/privacy.html">プライバシーポリシー</a>をご覧ください。</p></details>
+      </div>
+    </section>
+
+    <!-- ════════ CTA ════════ -->
+    <section class="end" aria-labelledby="end-h">
+      <img src="/assets/icon.png?v=134" width="84" height="84" alt="今日どこ行く？ のアプリアイコン" class="end-icon">
+      <h2 id="end-h">迷う時間を、子どもと過ごす時間に。</h2>
+      <p>名古屋近郊の子連れおでかけアプリ「今日どこ行く？」</p>
+      <div class="end-cta">
+        <a class="btn" href="https://apps.apple.com/jp/app/id6762373565?pt=128792125&amp;ct=score26_website&amp;mt=8" target="_blank" rel="noopener">App Store で見る</a>
+        <figure class="qr"><img src="/assets/qr-appstore.png" loading="lazy" width="100" height="100" alt="App Store のページを開くQRコード"><figcaption>iPhoneで読み取る</figcaption></figure>
+      </div>
+      <p class="fine">現在は無料でお使いいただけます。</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p class="foot-brand">tosnet studio</p>
+    <nav class="foot-links" aria-label="サイト情報">
+      <a href="mailto:contact@tosnet-studio.com">お問い合わせ</a>
+      <a href="https://tosnet-studio.com/privacy.html">プライバシーポリシー</a>
+      <a href="https://tosnet-studio.com/terms.html">利用規約</a>
+      <a href="https://tosnet-studio.com/legal.html">特定商取引法</a>
+      <a href="https://tosnet-studio.com/analytics.html">アクセス解析について</a>
+      <a href="https://tosnet-studio.com/premium-notice.html">Premium導入と規約改定のお知らせ</a>
+    </nav>
+    <nav class="foot-links" aria-label="SNS">
+      <a href="https://instagram.com/tosnet_studio" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://x.com/tosnet_studio" target="_blank" rel="noopener">X</a>
+      <a href="https://note.com/tosnet_studio" target="_blank" rel="noopener">note</a>
+    </nav>
+    <p class="foot-legal">&copy; 2026 tosnet studio ・ App Store は Apple Inc. のサービスマークです。天気データ: Apple Weather(<a href="https://weatherkit.apple.com/legal-attribution.html" target="_blank" rel="noopener">法的帰属</a>)</p>
+    <button type="button" class="calm-btn">動きを止める</button>
   </footer>
+
+  <dialog class="viewer" aria-labelledby="viewer-title" aria-describedby="viewer-note">
+    <div class="viewer-head"><h2 id="viewer-title">実際のアプリ画面</h2><button type="button" class="viewer-close" autofocus>閉じる <span aria-hidden="true">×</span></button></div>
+    <p id="viewer-note">撮影時点のアプリ画面です。現在の予報ではありません。</p>
+    <div class="viewer-scroll" tabindex="0" role="region" aria-label="拡大画面。スクロールして全体を確認できます"><p class="viewer-status" role="status">画面を読み込み中…</p><img class="viewer-image" width="874" height="1900" alt=""></div>
+    <div class="viewer-controls"><button type="button" class="viewer-prev" aria-label="前の画面を見る">← 前へ</button><p class="viewer-count" aria-live="polite"></p><button type="button" class="viewer-next" aria-label="次の画面を見る">次へ →</button></div>
+  </dialog>
+  <script src="/js/sora.js?v=20261009-release" defer></script>
 </body>
 </html>
