@@ -81,7 +81,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
       <h2>今日の遊びやすさは、アプリで</h2>
       <p>「今日どこ行く？」は、名古屋近郊の公園・おでかけスポット{parks}施設(うち{free}施設は無料)と
          レジャープール{pools}施設を、雨・UV・風・気温の独自スコアで比較できる無料アプリです。
-         この施設の「今日の遊びやすさ」も 10 秒でわかります。</p>
+         この施設の今日の遊びやすさも、理由といっしょに確かめられます。</p>
       <a class="store" href="{app_store_url}">App Store で入手(無料)</a>
     </div>
     <footer>tosnet studio ｜ <a href="{site_origin}/">tosnet-studio.com</a></footer>
