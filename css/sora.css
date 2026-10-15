@@ -191,9 +191,9 @@ body[data-weather="heat"] .town .water { fill: #3FC6E6; }
 }
 
 /* ───── news ───── */
-.news { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px 14px; margin: 0 var(--pad); padding: 12px 18px; border-radius: 16px; background: #fff; box-shadow: 0 0 0 2px var(--ink) inset; font-size: .9rem; max-width: 760px; }
+.news { margin: 0 var(--pad); font-size: .9rem; max-width: 760px; }
 @media (min-width: 840px) { .news { margin: 0 auto; } }
-.news h2 { font-family: var(--body); font-size: .75rem; font-weight: 800; padding: 1px 10px; border-radius: 99px; background: var(--ink); color: #fff; }
+.news h2 { display: inline-block; margin: 0 0 8px; font-family: var(--body); font-size: .75rem; font-weight: 800; padding: 1px 10px; border-radius: 99px; background: var(--ink); color: #fff; }
 .news time { color: var(--ink-2); font-variant-numeric: tabular-nums; }
 .news a { font-weight: 700; }
 
@@ -332,7 +332,7 @@ body:not([data-weather="rain"]) .town .rain line, body:not([data-weather="heat"]
   .town .tag-n { font-size: 40px; }
 }
 @media (forced-colors: active) {
-  .btn, .pill, .page, .cr, .cnt, details, .bb, .weather-pick button, .legend li, .news, .paper, .sticky, .town { border: 2px solid CanvasText; }
+  .btn, .pill, .page, .cr, .cnt, details, .bb, .weather-pick button, .legend li, .news-items, .paper, .sticky, .town { border: 2px solid CanvasText; }
   .weather-pick [aria-checked="true"] { outline: 4px solid Highlight; outline-offset: 2px; }
 }
 
@@ -442,7 +442,7 @@ section[id] { scroll-margin-top: 6rem; }
 .viewer-status { padding: 16px; font-size: 1rem; line-height: 1.7; }
 
 /* 新着情報を日付ごとにまとめる。 */
-.news-items { display: grid; gap: 12px; flex: 1 1 480px; min-width: 0; }
+.news-items { display: grid; gap: 12px; min-width: 0; padding: 12px 18px; border-radius: 16px; background: #fff; box-shadow: 0 0 0 2px var(--ink) inset; }
 .news-item { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
 .news-item + .news-item { border-top: 1px solid var(--ink-2); padding-top: 12px; }
 .news-item .news-note { flex-basis: 100%; }
