@@ -200,7 +200,7 @@ def render_page(f: dict, parks: int, free: int, pools: int, generated_note: str)
         "独自スコアでチェック。名古屋近郊の子連れおでかけ比較アプリ「今日どこ行く？」"
     )
     meta_line = f"{type_label} ｜ {address}" if address else type_label
-    return PAGE_TEMPLATE.format(
+    rendered = PAGE_TEMPLATE.format(
         name=html.escape(f["name"]),
         meta_line=html.escape(meta_line),
         description=html.escape(description_raw),
@@ -215,6 +215,30 @@ def render_page(f: dict, parks: int, free: int, pools: int, generated_note: str)
         app_store_id=APP_STORE_ID,
         site_origin=SITE_ORIGIN,
     )
+
+    # 074の閉店告知をHPへ先行反映。施設数は出荷DB由来のまま（D-39/D-139）。
+    if f["id"] == "074":
+        closed_description = (
+            "こどもっちパーク たじみ店は2026年9月30日に閉店しました。"
+        )
+        rendered = rendered.replace(html.escape(description_raw), html.escape(closed_description))
+        rendered = rendered.replace(
+            html.escape(f["name"]) + " | 今日どこ行く？",
+            html.escape(f["name"]) + "（閉店） | 今日どこ行く？",
+        )
+        rendered = rendered.replace(INACTIVE_NOTICE, "")
+        meta = '<p class="meta">' + html.escape(meta_line) + '</p>'
+        notice = (
+            '\n      <p class="inactive">この施設は2026年9月30日に閉店しました。</p>'
+            '\n      <p><a href="https://kodomocchi-park.com/information/0k7wm35nj18nl24j">'
+            '公式の閉店のお知らせ</a></p>'
+        )
+        rendered = rendered.replace(meta, meta + notice, 1)
+        # user指示：別施設への案内は置かず、閉店情報と公式告知だけを表示。
+        app_start = rendered.index('    <div class="card app">')
+        app_end = rendered.index('    <footer>', app_start)
+        rendered = rendered[:app_start] + rendered[app_end:]
+    return rendered
 
 
 def render_list_item(f: dict) -> str:
