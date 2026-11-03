@@ -50,9 +50,9 @@
     // 実画像をそのまま拡大する。作り物のスコアや現在の予報は表示しない。
     const dialog = one('.viewer');
     if (typeof dialog.showModal === 'function') {
-      const shots = ['01-list-decide', '03-detail-score', '04-filter', '06-notify-priming'];
-      const labels = ['候補を比べる', '理由と持ち物', '入場無料で探す', '予定の通知'];
-      const notes = ['1.3.0の一覧画面です。', '1.3.4の施設詳細画面です。', '1.3.0の絞り込み画面です。', '1.3.0の通知案内画面です。'];
+      const shots = ['01-list-140', '02-precautions-140', '03-free-filter-140', '05-plan-140', '06-weekly-140'];
+      const labels = ['候補を比べる', '理由と持ち物', '入場無料で探す', '訪問予定', 'Premiumの週間予報'];
+      const notes = ["1.4.0のFreeの一覧画面です。2026年10月26日、シミュレータで撮影。", "1.4.0のFreeの施設詳細画面です。2026年10月26日、シミュレータで撮影。", "1.4.0のFreeの絞り込み画面です。2026年10月26日、シミュレータで撮影。", "1.4.0のFreeの訪問予定画面です。2026年10月26日、シミュレータで撮影。", "1.4.0のPremium画面です。FUJIなごや科学館の週間予報を表示しています。2026年10月26日、シミュレータで撮影。"];
       const image = one('.viewer-image');
       const title = one('#viewer-title');
       const status = one('.viewer-status');
