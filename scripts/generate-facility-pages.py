@@ -8,7 +8,7 @@ facilities.json を単一ソースに f/<id>/index.html を全施設分生成す
 - 施設一覧 f/index.html と sitemap.xml も同時に生成する(検索エンジンの発見経路、2026-10-16)。
   一覧と sitemap は active 施設だけを載せる(休止中ページは残すが案内しない)
 - self-check: 必須キー検証 / 生成件数 = 全施設数 / canonical 数字照合(--expect-*) / OGP・canonical タグ存在
-  / 一覧リンク数・sitemap URL 数 = active 施設数(+ トップ・一覧)
+  / 一覧リンク数 = active 施設数 / sitemap URL 数 = active 施設数 + 固定ページ数
 
 使い方(HP repo ルートで):
   python3 scripts/generate-facility-pages.py \
@@ -28,6 +28,9 @@ APP_STORE_ID = "6762373565"
 APP_STORE_URL = f"https://apps.apple.com/jp/app/id{APP_STORE_ID}?pt=128792125&ct=score26_website&mt=8"
 SITE_ORIGIN = "https://tosnet-studio.com"
 OGP_IMAGE = f"{SITE_ORIGIN}/images/ogp.png"
+
+# 新しい公開ページを追加するときは、sitemap.xmlと同じ変更でここへ登録する。
+STATIC_SITEMAP_PATHS = ("/", "/f/", "/news.html")
 
 REQUIRED_KEYS = ("id", "name", "address", "facilityType", "category", "admissionFee", "isActive")
 
@@ -278,8 +281,8 @@ def render_list_page(facilities: list[dict], parks: int, free: int, pools: int,
 
 
 def render_sitemap(facilities: list[dict]) -> str:
-    """トップ・施設一覧・active 施設ページの URL を列挙する。lastmod は付けない(更新日を持たないため)。"""
-    urls = [f"{SITE_ORIGIN}/", f"{SITE_ORIGIN}/f/"]
+    """固定ページ・active 施設ページの URL を列挙する。lastmod は付けない(更新日を持たないため)。"""
+    urls = [f"{SITE_ORIGIN}{path}" for path in STATIC_SITEMAP_PATHS]
     urls += [f"{SITE_ORIGIN}/f/{f['id']}/" for f in facilities if f["isActive"]]
     body = "\n".join(f"  <url><loc>{html.escape(u)}</loc></url>" for u in urls)
     return (
@@ -352,14 +355,14 @@ def main() -> int:
         return 1
     (args.out / "index.html").write_text(list_html, encoding="utf-8")
     sitemap = render_sitemap(facilities)
-    # self-check 6: sitemap の URL 数 = active 施設数 + トップ + 一覧
-    if sitemap.count("<loc>") != active_count + 2:
+    # self-check 6: sitemap の URL 数 = active 施設数 + 固定ページ
+    if sitemap.count("<loc>") != active_count + len(STATIC_SITEMAP_PATHS):
         print("ERROR: sitemap の URL 数が想定と一致しない", file=sys.stderr)
         return 1
     args.sitemap.write_text(sitemap, encoding="utf-8")
 
     print(f"OK: {written} ページ生成(公園{parks}/無料{free}/プール{pools}、inactive 含む)"
-          f" + 施設一覧 {active_count} 件 + sitemap {active_count + 2} URL")
+          f" + 施設一覧 {active_count} 件 + sitemap {active_count + len(STATIC_SITEMAP_PATHS)} URL")
     return 0
 
 
